@@ -1,0 +1,48 @@
+@Metadata.layer: #PARTNER
+@UI.headerInfo:{
+    typeName: 'Freight',
+    typeNamePlural: 'Freight Interface',
+    title: { value: 'Invoice' }
+ }
+annotate entity zcds_c_invheadf with
+{
+  @UI.lineItem: [{ position: 10,label: 'Sales Invoice Number' }]
+  @UI.selectionField: [{ position: 10 }]
+  @Consumption.valueHelpDefinition: [{ entity.name: 'zcds_i_invnum', entity.element: 'Invoice' }]
+  @EndUserText.label: 'Sales Invoice Number'
+  Invoice;
+  @UI.selectionField: [{ position: 50 }]
+  @EndUserText.label: 'Creation Date'
+  @Consumption.valueHelpDefinition: [{ entity.name: 'zcds_i_invnum', entity.element: 'InvoiceDate' }]
+  InvoiceDate;
+  @UI.lineItem: [{ position: 20 }]
+  @EndUserText.label: 'Customer'
+  Customer;
+  @UI.lineItem: [{ position: 30 }]
+  @EndUserText.label: 'Customer Name'
+  CustomerName;
+  @UI.lineItem: [{ position: 40 }]
+  @EndUserText.label: 'Customer Region'
+  Region;
+  @UI.lineItem: [{ position: 60 }]
+  @UI.selectionField: [{ position: 30 }]
+  @EndUserText.label: 'Truck Number'
+  @Consumption.valueHelpDefinition: [{ entity.name: 'zcds_i_invnum', entity.element: 'VechicleNo' }]
+  VechicleNo;
+  @UI.lineItem: [{ position: 70 }]
+  LrNo;
+  @UI.selectionField: [{ position: 40 }]
+  @EndUserText.label: 'Refrence Number'
+  @Consumption.valueHelpDefinition: [{ entity.name: 'zcds_i_invnum', entity.element: 'RefNum' }]
+  RefNum;
+  @UI.lineItem: [{ position: 50 }]
+  @UI.selectionField: [{ position: 20 }]
+  @EndUserText.label: 'Transporter Code'
+  @Consumption.valueHelpDefinition: [{ entity.name: 'zcds_i_invnum', entity.element: 'TransporterCode' }]
+  TransporterCode;
+  //  @UI.lineItem: [{ position: 100 }]
+  //  @UI.selectionField: [{ position: 100 }]
+  /* Associations */
+  //_Item;
+
+}

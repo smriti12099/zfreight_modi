@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Freight"
+  },
+  "ui5AppDetails": {
+    "appId": "zfreight"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_DD9EC33F399BA09433EEAD2057D2B8ED5324396C_TM",
+    "semanticObject": "zso_Freight",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_DD9EC33F399BA09433EEAD2057D2B8ED5324396C_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Freight",
+        "subtitle": "Freight InterFace"
+      }
+    }
+  ]
+}

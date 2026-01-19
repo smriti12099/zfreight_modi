@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Definition for Freight Interface'
+define service ZSD_FREIGHT {
+  expose zcds_c_invheadf as Header;
+  expose zcds_c_invitemf as Item;
+}

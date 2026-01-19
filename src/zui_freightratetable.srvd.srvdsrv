@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZI_FreightRateTable_S'
+define service ZUI_FREIGHTRATETABLE {
+  expose ZI_FREIGHTRATETABLE_S as FreightRateTableAll;
+  expose ZI_FREIGHTRATETABLE as FreightRateTable;
+}

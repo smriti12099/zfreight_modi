@@ -1,0 +1,12 @@
+@Metadata.layer: #CORE
+annotate entity ZCDS_FREIGHT_ABSTRACT with
+{
+  @UI.lineItem: [{ label: 'Freight Rate' }]
+  
+  FreightRate;
+  @UI.lineItem: [{ label: 'Detention Rate' }]
+  DetentionRate;
+  @UI.lineItem: [{label: 'Other Charges' }]
+  OtherCharges;
+
+}

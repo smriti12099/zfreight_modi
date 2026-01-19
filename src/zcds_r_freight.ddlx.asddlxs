@@ -1,0 +1,102 @@
+@Metadata.layer: #PARTNER
+@UI.headerInfo:{
+    typeName: 'Freight',
+    typeNamePlural: 'Freight Interface',
+    title: { value: 'Invoice' }
+ }
+
+
+annotate entity ZCDS_R_FREIGHT with
+{
+
+  @UI.facet: [
+              {
+                  purpose: #HEADER,
+                  type: #DATAPOINT_REFERENCE,
+                  label: 'Invoice Number',
+                  position: 10,
+                  targetQualifier: 'genum_data'
+              },
+
+               {
+                 purpose: #STANDARD,
+                 label: 'Header',
+                 id: 'idHeadFacet',
+                 type: #COLLECTION,
+                 position: 10
+                }
+//                      {
+//                       purpose: #STANDARD,
+//                       label : 'Charges',
+//                       id: 'idHd1Facet',
+//                       position: 10,
+//                       type: #FIELDGROUP_REFERENCE,
+//                       parentId: 'idHeadFacet',
+//                        targetQualifier: 'tqHd2'
+//                      }
+
+
+
+                ]
+
+
+  @UI.lineItem: [{ position: 10,label: 'Sales Invoice Number' }]
+  //  @UI.lineItem: [{ type: #FOR_ACTION,dataAction: 'Calculate_Freight',
+  //  invocationGrouping: #CHANGE_SET }]
+  @UI.identification: [{ position: 10,label: 'Sales Invoice Number' }]
+  @UI.selectionField: [{ position: 10 }]
+  @Consumption.valueHelpDefinition: [{ entity.name: 'zcds_i_invnum', entity.element: 'Invoice' }]
+  @EndUserText.label: 'Sales Invoice Number'
+  @UI.dataPoint: { qualifier: 'genum_data', title: 'Freight Interface' }
+
+  Invoice;
+
+  @UI.selectionField: [{ position: 60 }]
+  @EndUserText.label: 'Creation Date'
+  @Consumption.valueHelpDefinition: [{ entity.name: 'zcds_i_invnum', entity.element: 'InvoiceDate' }]
+  InvoiceDate;
+  @UI.lineItem: [{ position: 20 }]
+  @EndUserText.label: 'Customer'
+  Customer;
+  @UI.lineItem: [{ position: 30 }]
+  @EndUserText.label: 'Customer Name'
+  CustomerName;
+  @UI.lineItem: [{ position: 40 }]
+  @EndUserText.label: 'Customer Region'
+  Region;
+  @UI.lineItem: [{ position: 80 }]
+  @UI.selectionField: [{ position: 30 }]
+  @EndUserText.label: 'Truck Number'
+  @Consumption.valueHelpDefinition: [{ entity.name: 'zcds_i_invnum', entity.element: 'VechicleNo' }]
+  VechicleNo;
+  @UI.lineItem: [{ position: 90 }]
+  LrNo;
+  @UI.selectionField: [{ position: 40 }]
+  @EndUserText.label: 'Refrence Number'
+  @Consumption.valueHelpDefinition: [{ entity.name: 'zcds_i_invnum', entity.element: 'RefNum' }]
+  RefNum;
+  @UI.lineItem: [{ position: 70 }]
+  @UI.selectionField: [{ position: 20 }]
+  @EndUserText.label: 'Transporter Code'
+  @Consumption.valueHelpDefinition: [{ entity.name: 'zcds_i_invnum', entity.element: 'TransporterCode' }]
+  TransporterCode;
+  @UI.lineItem: [{ position: 50 }]
+  @UI.selectionField: [{ position: 50 }]
+  @EndUserText.label: 'Plant Code'
+  @Consumption.valueHelpDefinition: [{ entity.name: 'zcds_i_invnum', entity.element: 'Plant' }]
+  Plant;
+  @UI.lineItem: [{ position: 60 }]
+  PlantName;
+ //// @UI.fieldGroup: [{ position: 10,  qualifier: 'tqHd2',label: 'Freight Rate '  }]
+  ////@UI.lineItem : [ { type: #FOR_ACTION, dataAction: 'PostJournalEntry' } ]
+ //// FreightRate;
+ //// @UI.fieldGroup: [{ position: 20,  qualifier: 'tqHd2',label: 'Detention Rate '  }]
+ //// DetentionRate;
+//  @UI.lineItem: [{ position: 120,label: 'Calculate Freight',type: #FOR_ACTION,dataAction: 'Calculate_Freight',
+//    invocationGrouping: #CHANGE_SET }]
+@UI.lineItem: [{ position: 120,label: 'POST Freight',type: #FOR_ACTION,dataAction: 'Calculate_Freight_default',
+    invocationGrouping: #CHANGE_SET }]
+ //// @UI.fieldGroup: [{ position: 30,  qualifier: 'tqHd2',label: 'Other Charges '  }]
+  OtherCharges;
+
+}

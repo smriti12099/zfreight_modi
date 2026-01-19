@@ -1,0 +1,67 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'FreightRateTable', 
+    typeNamePlural: 'FreightRateTables', 
+    title: {
+      type: #STANDARD, 
+      label: 'Freight Rate Table', 
+      value: 'PlantPin'
+    }
+  }
+}
+annotate view ZI_FreightRateTable with
+{
+  @UI.identification: [ {
+    position: 1 
+  } ]
+  @UI.lineItem: [ {
+    position: 1 
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_FreightRateTable', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Freight Rate Table', 
+    position: 1 
+  } ]
+  PlantPin;
+  
+  @UI.identification: [ {
+    position: 2 
+  } ]
+  @UI.lineItem: [ {
+    position: 2 
+  } ]
+  CustomerPin;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'ValidFrom'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'ValidFrom'
+  } ]
+  ValidFrom;
+  
+  @UI.identification: [ {
+    position: 4 , 
+    label: 'ValidTo'
+  } ]
+  @UI.lineItem: [ {
+    position: 4 , 
+    label: 'ValidTo'
+  } ]
+  ValidTo;
+  
+  @UI.identification: [ {
+    position: 5 , 
+    label: 'FreightRate'
+  } ]
+  @UI.lineItem: [ {
+    position: 5 , 
+    label: 'FreightRate'
+  } ]
+  FreightRate;
+}

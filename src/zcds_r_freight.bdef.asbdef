@@ -1,0 +1,21 @@
+unmanaged implementation in class zbp_cds_r_freight unique;
+strict ( 2 );
+
+define behavior for ZCDS_R_FREIGHT alias Freight
+//late numbering
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+//  create ( authorization : global );
+  update;
+//  delete;
+  field ( readonly ) Invoice, InvoiceItem;
+  action Calculate_Freight parameter ZCDS_FREIGHT_ABSTRACT result [1] $self;
+  //validation validate_transporter on save {field TransporterCode; create; }
+  action ( features : instance, authorization : update ) Calculate_Freight_default parameter ZCDS_FREIGHT_ABSTRACT result [1] $self { default function GetDefaultsForFreight; }
+
+  //  action Calculate_Freight_default parameter ZCDS_FREIGHT_ABSTRACT result [1] $self {default function GetDefaultsForFreight; }
+
+
+}

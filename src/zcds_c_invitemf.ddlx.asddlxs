@@ -1,0 +1,29 @@
+@Metadata.layer: #PARTNER
+@UI: {
+  headerInfo: { typeName: 'Item',
+                typeNamePlural: 'Items',
+                title: { type: #STANDARD, value: 'InvoiceItem' } } }
+annotate entity zcds_c_invitemf with
+{
+  @UI.lineItem: [ { hidden: true } ]
+  Invoice;
+  @UI.lineItem: [ { position: 10 } ]
+  InvoiceItem;
+  @UI.lineItem: [ { position: 20 } ]
+  Material;
+  @UI.lineItem: [ { position: 30 } ]
+  MaterialDescription;
+  @UI.lineItem: [ { position: 40 } ]
+  OrderQuantity;
+  @UI.lineItem: [ { position: 50 } ]
+  OpenOrderQuantity;
+  @UI.lineItem: [ { position: 60 } ]
+  BillingQuantityUnit;
+  @UI.lineItem: [ { position: 70 } ]
+  Plant;
+  @UI.lineItem: [ { position: 80 } ]
+  PlantName;
+  /* Associations */
+  // _Head;
+
+}

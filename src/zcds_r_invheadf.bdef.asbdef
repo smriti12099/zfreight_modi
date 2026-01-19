@@ -1,0 +1,27 @@
+unmanaged implementation in class zbp_cds_r_invheadf unique;
+strict ( 2 );
+
+define behavior for zcds_r_invheadf //alias <alias_name>
+//late numbering
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly ) Invoice;
+  association _Item { create; }
+}
+
+define behavior for zcds_r_invitemf //alias <alias_name>
+//late numbering
+lock dependent by _Head
+authorization dependent by _Head
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Invoice, InvoiceItem;
+  association _Head;
+}

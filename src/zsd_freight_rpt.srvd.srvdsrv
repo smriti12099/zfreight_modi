@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition for Freight Report'
+define service ZSD_FREIGHT_RPT {
+  expose zcds_i_freight_rpt;
+}
